@@ -3,6 +3,8 @@ K-Nearest Neighbor
 Erika Vargas
 February 5, 2019
 
+For this Cluster analysis project I will use the flea beetles dataset to train a KNN algorithm.
+
 ``` r
 library(Flury) #contains the flea beetles dataset
 library(tidyverse)
@@ -353,18 +355,18 @@ CrossTable(x=bee_test_label, y= fleaBeetle_pred4,prop.chisq = FALSE)
     ##                | fleaBeetle_pred4 
     ## bee_test_label | carduorum |  oleracea | Row Total | 
     ## ---------------|-----------|-----------|-----------|
-    ##      carduorum |         6 |         1 |         7 | 
-    ##                |     0.857 |     0.143 |     0.538 | 
-    ##                |     1.000 |     0.143 |           | 
-    ##                |     0.462 |     0.077 |           | 
+    ##      carduorum |         5 |         2 |         7 | 
+    ##                |     0.714 |     0.286 |     0.538 | 
+    ##                |     1.000 |     0.250 |           | 
+    ##                |     0.385 |     0.154 |           | 
     ## ---------------|-----------|-----------|-----------|
     ##       oleracea |         0 |         6 |         6 | 
     ##                |     0.000 |     1.000 |     0.462 | 
-    ##                |     0.000 |     0.857 |           | 
+    ##                |     0.000 |     0.750 |           | 
     ##                |     0.000 |     0.462 |           | 
     ## ---------------|-----------|-----------|-----------|
-    ##   Column Total |         6 |         7 |        13 | 
-    ##                |     0.462 |     0.538 |           | 
+    ##   Column Total |         5 |         8 |        13 | 
+    ##                |     0.385 |     0.615 |           | 
     ## ---------------|-----------|-----------|-----------|
     ## 
     ## 
@@ -374,7 +376,7 @@ accuracy_k4 = sum(fleaBeetle_pred4 == flea.beetles$Species)/N
 round(accuracy_k4*100,2)  # % of accuracy
 ```
 
-    ## [1] 64.1
+    ## [1] 61.54
 
 ``` r
 #k = 3
@@ -472,7 +474,9 @@ round(accuracy_k1*100,2)   # % of accuracy
 
     ## [1] 61.54
 
-*Based on this plot , K=5,4,and 1 yield the smallest test error rate.* *taking into account that the dataset is not big enough.I choose K=4 as the best number of neighbors for KNN in the prediction.* *The total accuracy of the model is 97.43%, making it the best model.* *The classification result based on K=4 is shown in the following the scatter plot.*
+*Based on this plot , K=5,4,and 1 yield the smallest test error rate.* *taking into account that the dataset is not big enough.I choose K=4 as the best number of neighbors for KNN in the prediction.*
+
+*The classification result based on K=4 is shown in the following the scatter plot.*
 
 ``` r
 #scatter plot flea beetle prediction 
